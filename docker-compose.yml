@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
+    container_name: frontend-app
+    ports:
+        - "8080:80"
+    environment:
+        - VITE_BACKEND=http://localhost:3000
+
